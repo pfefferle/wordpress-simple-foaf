@@ -20,9 +20,12 @@ A simple FoaF feed for all blog users, based on the work of [wasab.dk](http://ww
 * Activate it at the admin interface
 
 ## ChangeLog ##
+
 ### Version 0.1.1.1 ###
 * flush rewrite-rules on activation
+
 ### Version 0.1.1 ###
 * some text fixes
+
 ### Version 0.1 ###
 * Initial release.
