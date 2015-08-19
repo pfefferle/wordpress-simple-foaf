@@ -21,6 +21,9 @@ A simple FoaF feed for all blog users, based on the work of [wasab.dk](http://ww
 
 ## ChangeLog ##
 
+### Version 1.0.0 ###
+* complete refactoring
+
 ### Version 0.1.1.1 ###
 * flush rewrite-rules on activation
 
