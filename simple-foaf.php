@@ -1,25 +1,28 @@
 <?php
-/*
-Plugin Name: SimpleFOAF
-Plugin URI: http://notizblog.org/
-Description: FOAF RDF/XML profile.
-Version: 1.0.0
-Author: Matthias Pfefferle
-Author URI: http://notizblog.org/
-*/
+/**
+ * Plugin Name: SimpleFOAF
+ * Plugin URI: http://notizblog.org/
+ * Description: FOAF RDF/XML profile.
+ * Version: 1.0.1
+ * Author: Matthias Pfefferle
+ * Author URI: http://notizblog.org/
+ * License: GPL-2.0
+ * License URI: http://opensource.org/licenses/GPL-2.0
+ */
 
-// based on the great work of http://www.wasab.dk/morten/blog/archives/2004/07/05/wordpress-plugin-foaf-output?version=1.17
+// based on the great work of
+// http://www.wasab.dk/morten/blog/archives/2004/07/05/wordpress-plugin-foaf-output?version=1.17
 
 add_action( 'init', array( 'SimpleFoafPlugin', 'init' ) );
+
 register_activation_hook( __FILE__, array( 'SimpleFoafPlugin', 'flush_rewrite_rules' ) );
 register_deactivation_hook( __FILE__, array( 'SimpleFoafPlugin', 'flush_rewrite_rules' ) );
 
 class SimpleFoafPlugin {
-
 	/**
 	 * init function
 	 */
-	function init() {
+	public static function init() {
 		add_action( 'wp_head', array( 'SimpleFoafPlugin', 'add_header' ) );
 		add_filter( 'host_meta', array( 'SimpleFoafPlugin', 'add_host_meta_links' ) );
 		add_filter( 'webfinger_user_data', array( 'SimpleFoafPlugin', 'add_webfinger_links' ), 10, 3 );
@@ -33,7 +36,7 @@ class SimpleFoafPlugin {
 	/**
 	 * reset rewrite rules
 	 */
-	function flush_rewrite_rules() {
+	public static function flush_rewrite_rules() {
 		global $wp_rewrite;
 		$wp_rewrite->flush_rules();
 	}
@@ -41,7 +44,7 @@ class SimpleFoafPlugin {
 	/**
 	 * add link headers
 	 */
-	function add_header() {
+	public static function add_header() {
 		if ( is_home() ) {
 ?>
 	<link rel="meta" type="application/rdf+xml" title="FOAF" href="<?php echo get_feed_link( 'foaf' ); ?>" />
@@ -61,7 +64,7 @@ class SimpleFoafPlugin {
 	/**
 	 * handles new feed type
 	 */
-	function do_feed_foaf() {
+	public static function do_feed_foaf() {
 		header( 'Content-type: application/rdf+xml' );
 
 		if ( is_author() ) {
@@ -74,7 +77,7 @@ class SimpleFoafPlugin {
 	/**
 	 * add the host meta information
 	 */
-	function add_host_meta_links($host_meta) {
+	public static function add_host_meta_links( $host_meta ) {
 		$host_meta['links'][] = array( 'rel' => 'describedby', 'href' => get_feed_link( 'foaf' ), 'type' => 'application/rdf+xml' );
 
 		return $host_meta;
@@ -83,7 +86,7 @@ class SimpleFoafPlugin {
 	/**
 	 * add the host meta information
 	 */
-	function add_webfinger_links($webfinger, $resource, $user) {
+	public static function add_webfinger_links( $webfinger, $resource, $user ) {
 		$webfinger['links'][] = array( 'rel' => 'describedby', 'href' => get_author_feed_link( $user->ID, 'foaf' ), 'type' => 'application/rdf+xml' );
 
 		return $webfinger;
