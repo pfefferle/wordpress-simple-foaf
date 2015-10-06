@@ -6,7 +6,7 @@
 **Tags:** foaf, feed, xml  
 **Requires at least:** 3.0  
 **Tested up to:** 4.3  
-**Stable tag:** 1.0.0  
+**Stable tag:** 1.0.1  
 
 A simple FoaF feed for all blog users
 
