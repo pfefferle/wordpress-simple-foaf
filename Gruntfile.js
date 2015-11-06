@@ -8,6 +8,15 @@ module.exports = function(grunt) {
         },
       },
     },
+    wp_deploy: {
+      deploy: {
+        options: {
+          plugin_slug: 'simple-foaf',
+          svn_user: 'pfefferle',
+          build_dir: './'
+        },
+      }
+    },
     replace: {
       dist: {
         options: {
@@ -29,8 +38,12 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-wp-readme-to-markdown');
+  grunt.loadNpmTasks('grunt-wp-deploy');
   grunt.loadNpmTasks('grunt-replace');
 
   // Default task(s).
   grunt.registerTask('default', ['wp_readme_to_markdown', 'replace']);
+
+  // Deploy task(s).
+  grunt.registerTask('deploy', ['wp_readme_to_markdown', 'replace', 'wp_deploy']);
 };
