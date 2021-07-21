@@ -1,0 +1,13 @@
+/.wordpress-org
+/.git
+/.github
+/node_modules
+readme.md
+README.md
+Gruntfile.js
+package.json
+phpcs.xml
+.distignore
+.gitignore
+.gitattributes
+.editorconfig

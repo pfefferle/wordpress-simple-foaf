@@ -1,9 +1,9 @@
 === FoaF ===
 Contributors: pfefferle
-Donate link: http://14101978.de/
+Donate link: https://notiz.blog/donate/
 Tags: foaf, feed, xml
 Requires at least: 3.0
-Tested up to: 4.3
+Tested up to: 5.8
 Stable tag: 1.0.1
 
 A simple FoaF feed for all blog users
