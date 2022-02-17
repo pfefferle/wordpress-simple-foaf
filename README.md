@@ -1,11 +1,11 @@
 [![WordPress](https://img.shields.io/wordpress/v/simple-foaf.svg?style=flat-square)](https://wordpress.org/plugins/simple-foaf/) [![WordPress plugin](https://img.shields.io/wordpress/plugin/v/simple-foaf.svg?style=flat-square)](https://wordpress.org/plugins/simple-foaf/changelog/) [![WordPress](https://img.shields.io/wordpress/plugin/dt/simple-foaf.svg?style=flat-square)](https://wordpress.org/plugins/simple-foaf/) 
 
 # FoaF #
-**Contributors:** pfefferle  
-**Donate link:** http://14101978.de/  
+**Contributors:** [pfefferle](https://profiles.wordpress.org/pfefferle/)  
+**Donate link:** https://notiz.blog/donate/  
 **Tags:** foaf, feed, xml  
 **Requires at least:** 3.0  
-**Tested up to:** 4.3  
+**Tested up to:** 5.9  
 **Stable tag:** 1.0.1  
 
 A simple FoaF feed for all blog users
